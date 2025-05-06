@@ -32,5 +32,6 @@ RUN chmod +x /entrypoint.sh
 RUN echo "root:changeme123" | chpasswd && \
     chage -d 0 root
 
+
 EXPOSE 22 4040
 CMD ["/entrypoint.sh"]
