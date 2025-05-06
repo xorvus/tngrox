@@ -20,6 +20,9 @@ RUN mkdir -p /var/run/sshd && \
     echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config && \
     echo "root:changeme123" | chpasswd
 
+# Generate SSH host keys
+RUN ssh-keygen -A
+
 # Entrypoint script
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
