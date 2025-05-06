@@ -1,12 +1,13 @@
-FROM rockylinux:9
+FROM debian:bullseye-slim
 
 ENV LANG=en_US.UTF-8
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Install dependencies
-RUN dnf -y upgrade --refresh && \
-    dnf -y install openssh-server wget unzip vim curl python3 iproute --allowerasing && \
-    dnf clean all
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y openssh-server wget unzip vim curl python3 iproute2 --no-install-recommends && \
+    apt-get clean
 
 # Install ngrok
 RUN wget -q https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.zip -O /ngrok.zip && \
