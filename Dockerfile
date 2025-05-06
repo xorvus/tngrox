@@ -10,7 +10,7 @@ RUN apt-get update && \
     apt-get clean
 
 # Install ngrok
-RUN wget -q https://github.com/ngrok/ngrok/releases/download/v3.1.0/ngrok-stable-linux-amd64.zip -O /ngrok.zip && \
+RUN wget -q https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-stable-linux-amd64.zip -O /ngrok.zip && \
     unzip /ngrok.zip -d /usr/local/bin && \
     chmod +x /usr/local/bin/ngrok && \
     rm -f /ngrok.zip
