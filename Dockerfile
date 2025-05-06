@@ -15,7 +15,6 @@ RUN wget -q https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-stable-linux-amd64.zip -O
     chmod +x /usr/local/bin/ngrok && \
     rm -f /ngrok.zip
 
-
 # SSH config
 RUN mkdir -p /var/run/sshd && \
     echo "PermitRootLogin yes" >> /etc/ssh/sshd_config && \
