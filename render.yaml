@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: Ngrok
+    env: docker
+    repo: https://github.com/adityaayatusy/tngrox
+    region: Singapore
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 22
+      - key: NGROK_TOKEN
+        sync: false
+      - key: REGION
+        sync: false
