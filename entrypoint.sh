@@ -11,7 +11,7 @@ REGION=${REGION:-ap}
 
 # Jalankan ngrok untuk port SSH (22)
 echo "🟡 Menjalankan ngrok..."
-/usr/local/bin/ngrok tcp --authtoken "$NGROK_TOKEN" --region "$REGION" 22 &
+/ngrok tcp --authtoken "$NGROK_TOKEN" --region "$REGION" 22 &
 
 # Tunggu ngrok aktif
 sleep 5
